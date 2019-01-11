@@ -50,7 +50,6 @@ public class Dedup
 		ArrayNode array = mapper.valueToTree(Arrays.asList(leads));
 		((ObjectNode)jsonNode).putArray("leads").addAll(array);
 		String finalJsonObj = "";
-		System.out.println("Final JSON Object:");
 		try
 		{
 			finalJsonObj = mapper.writerWithDefaultPrettyPrinter()
@@ -60,6 +59,7 @@ public class Dedup
 		{
 			System.out.println("Error writing to JSON file: " + e.getMessage());
 		}
+		System.out.println("Final JSON Object:");
 		System.out.println(finalJsonObj);
 	}
 	
